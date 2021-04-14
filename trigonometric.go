@@ -3,8 +3,8 @@ package praytime
 import "math"
 
 // ---------------------- Trigonometric Functions -----------------------
-// Fixangle range reduce angle in degrees.
-func Fixangle(a float64) float64 {
+//fixangle range reduce angle in degrees.
+func fixangle(a float64) float64 {
 
 	a = a - (360 * (math.Floor(a / 360.0)))
 
@@ -15,8 +15,8 @@ func Fixangle(a float64) float64 {
 	return a
 }
 
-// range reduce hours to 0..23
-func Fixhour(a float64) float64 {
+//fixhour range reduce hours to 0..23
+func fixhour(a float64) float64 {
 	a = a - 24.0*math.Floor(a/24.0)
 	if a < 0 {
 		a = a + 24
@@ -24,29 +24,29 @@ func Fixhour(a float64) float64 {
 	return a
 }
 
-// radian to degree
+//radiansToDegrees radian to degree
 func radiansToDegrees(alpha float64) float64 {
 	return ((alpha * 180.0) / math.Pi)
 }
 
-// deree to radian
-func DegreesToRadians(alpha float64) float64 {
+//degreesToRadians degree to radian
+func degreesToRadians(alpha float64) float64 {
 	return ((alpha * math.Pi) / 180.0)
 }
 
-// degree sin
+//dsin degree sin
 func dsin(d float64) float64 {
-	return (math.Sin(DegreesToRadians(d)))
+	return (math.Sin(degreesToRadians(d)))
 }
 
 // degree cos
 func dcos(d float64) float64 {
-	return (math.Cos(DegreesToRadians(d)))
+	return (math.Cos(degreesToRadians(d)))
 }
 
-// degree tan
+//dtan degree tan
 func dtan(d float64) float64 {
-	return (math.Tan(DegreesToRadians(d)))
+	return (math.Tan(degreesToRadians(d)))
 }
 
 // degree arcsin
